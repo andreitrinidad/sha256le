@@ -20,6 +20,11 @@ export default function Home() {
       }
     };
 
+    if (guesses.length >= 15) {
+      alert('Better luck next time!');
+      setGuesses([]);
+    }
+
     setCount(count);
   }, [state]);
 
@@ -87,7 +92,11 @@ export default function Home() {
           containerStyle=""
           shouldAutoFocus
         />
+        <div className='flex justify-between'>
         <p className='text-gray-500'>{count} characters remaining</p>
+        <p className='text-gray-500'>{15 - guesses.length} guess(es) left</p>
+        </div>
+  
         {renderGuesses()}
       </main>
     </div>
