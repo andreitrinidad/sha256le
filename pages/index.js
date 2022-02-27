@@ -20,7 +20,7 @@ export default function Home() {
       }
     };
 
-    if (guesses.length >= 15) {
+    if (guesses.length >= 14) {
       alert('Better luck next time!');
       setGuesses([]);
     }
@@ -94,7 +94,7 @@ export default function Home() {
         />
         <div className='flex justify-between'>
         <p className='text-gray-500'>{count} characters remaining</p>
-        <p className='text-gray-500'>{15 - guesses.length} guess(es) left</p>
+        <p className='text-gray-500'>{14 - guesses.length} guess(es) left</p>
         </div>
   
         {renderGuesses()}
