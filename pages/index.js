@@ -73,7 +73,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold font-mono">
           SHA256LE+
         </h1>
-        <a href="https://github.com/andreitrinidad" target="_blank">by andreitrinidad</a>
+        <a href="https://github.com/andreitrinidad" target="_blank" rel="noreferrer">by andreitrinidad</a>
       </nav>
       <main className='flex justify-center flex-col  px-6 '>
         <OtpInput
