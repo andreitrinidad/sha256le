@@ -13,7 +13,7 @@ export default function Home() {
     if (count == 0) {
       guesses.push(state);
       setState('');
-      if (state == shacode) {
+      if (state.toUpperCase() == shacode.toUpperCase()) {
         setTimeout(() => {
           alert('You\'ve guessed the SHA256 hash!')
         }, 1000);
@@ -24,8 +24,9 @@ export default function Home() {
   }, [state]);
 
   const renderCol = (letter, index) => {
-    const isMatched = shacode[index] == letter;
-    const isInArray = shacode.includes(letter);
+    const _shacode = shacode.toUpperCase();
+    const isMatched = _shacode[index] == letter.toUpperCase();
+    const isInArray = _shacode.includes(letter.toUpperCase());
     const globalRegex = new RegExp('^[0-9A-F]$', 'g');
     const isNotSHAChar = !globalRegex.test(letter);
 
@@ -78,7 +79,7 @@ export default function Home() {
       <main className='flex justify-center flex-col  px-6 '>
         <OtpInput
           value={state || ``}
-          onChange={(otp) => setState(otp)}
+          onChange={(otp) => setState(otp.toUpperCase())}
           numInputs={64}
           isInputNum={false}
           inputStyle={"border appearance-none outline-none w-6"}
