@@ -66,8 +66,9 @@ export default function Home() {
   return (
     <div className='w-full'>
       <Head>
-        <title>SHA256+</title>
+        <title>SHA256LE+</title>
         <meta name="description" content="SHA256+ by Andrei Trinidad" />
+        <meta property="og:image" content="/preview.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav className='flex item-center py-3 mb-6 justify-center flex-col border-b text-center w-screen'>
